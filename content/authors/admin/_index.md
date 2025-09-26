@@ -55,16 +55,19 @@ education:
     institution: Pusan National University
     date_start: 2019-09-01
     date_end: 2025-08-31
+    summary: |
 
   - area: MS Electronics Engineering
     institution: Pusan National University
     date_start: 2016-03-01
     date_end: 2018-02-28
+    summary: |
 
   - area: BS Electronics Engineering
     institution: Pusan National University
     date_start: 2010-03-01
     date_end: 2016-02-29
+    summary: |
 
 work:
   - position: Postdoctoral Researcher
@@ -73,6 +76,7 @@ work:
     company_logo: ''
     date_start: 2025-09-01
     date_end: ''
+    summary: |
 
   - position: Research Associate
     company_name: LG Electronics
@@ -80,6 +84,7 @@ work:
     company_logo: ''
     date_start: 2018-01-21
     date_end: 2019-12-31
+    summary: |
 
 # Awards.
 #   Add/remove as many awards below as you like.
