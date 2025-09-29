@@ -19,7 +19,7 @@ publication_types: ["article-journal"]
 publication: "*IEEE Access*, vol. 13"
 publication_short: ""
 
-url_pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10921647"
+external_link: "https://ieeexplore.ieee.org/document/10921647"
 
 tags:
 - Source Themes

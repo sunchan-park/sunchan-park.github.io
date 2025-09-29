@@ -1,25 +1,27 @@
-{{/* Custom citation view: title links to url_pdf/external_link if set */}}
-{{- $p := .page -}}
-{{- $pdf := $p.Params.url_pdf -}}
-{{- $ext := $p.Params.external_link -}}
-{{- $href := cond (ne $pdf "") $pdf (cond (ne $ext "") $ext $p.RelPermalink) -}}
+{{/* Override: make title link to url_pdf or external_link if provided */}}
+{{ with .page }}
+  {{- $pdf := .Params.url_pdf | default "" -}}
+  {{- $ext := .Params.external_link | default "" -}}
+  {{- $href := cond (ne $pdf "") $pdf (cond (ne $ext "") $ext .RelPermalink) -}}
 
-<article class="view-citation">
-
-  <div class="article-metadata">
-    {{ partial "page_metadata_authors" (dict "page" $p) }}
-  </div>
-
-  <h3 class="article-title">
-    <a href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>
-      {{ $p.Title }}
-    </a>
-  </h3>
-
-  {{ with $p.Params.publication }}
-    <div class="pub-publication">
-      {{ . | markdownify }}
+  <article class="view-citation"><!-- DEBUG: custom citation override loaded -->
+    <div class="article-metadata">
+      {{/* 간단 메타: 저자 · 연도 */}}
+      {{- with .Params.authors -}}
+        {{ delimit . ", " }}
+        {{ with $.page.Date }} ({{ .Format "2006" }}){{ end }}
+      {{- end -}}
     </div>
-  {{ end }}
 
-</article>
+    <h3 class="article-title">
+      <a href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>
+        {{ .Title }}
+      </a>
+    </h3>
+
+    {{/* 저널/학회 정보 */}}
+    {{ with .Params.publication }}
+      <div class="pub-publication">{{ . | markdownify }}</div>
+    {{ end }}
+  </article>
+{{ end }}
