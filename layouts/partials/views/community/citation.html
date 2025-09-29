@@ -46,12 +46,12 @@
   <span class="article-metadata li-cite-author">
     {{ partial "page_metadata_authors" $item }}
   </span>
-  ({{- $year -}}).
+  ({{ $year }}).
   <a href="{{ $href | safeURL }}" class="underline" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>
     {{ $item.Title }}
   </a>.
   {{ if $pub }}
-    {{- $pub | markdownify -}}.
+    {{ $pub | markdownify }}.
   {{ end }}
 
   {{/* 버튼(attachments) 숨김
@@ -72,9 +72,9 @@
     {{ $item.Title }}
   </a>.
   {{ if $pub }}
-    {{- $pub | markdownify -}},
+    {{ $pub | markdownify }},
   {{ end }}
-  {{- $year -}}.
+  {{ $year }}.
 
   {{/* 버튼(attachments) 숨김
   {{ if $has_attachments }}
@@ -91,14 +91,13 @@
     {{ partial "page_metadata_authors" $item }},
   </span>
   “<a href="{{ $href | safeURL }}" class="underline" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>
-    {{- $item.Title -}}
+    {{ $item.Title }}
   </a>,”
   {{ if $pub }} <em>{{ $pub | markdownify }}</em>,{{ end }}
-  {{- if $vol }} vol. {{ $vol }},{{ end }}
-  {{- if $num }} no. {{ $num }},{{ end }}
-  {{- if $pages }} pp. {{ $pages }},{{ end }}
-  {{- $year -}}
-  {{- if $doi }}, doi: {{ $doi }}{{ end }}.
+  {{ with $vol }} vol. {{ . }},{{ end }}
+  {{ with $num }} no. {{ . }},{{ end }}
+  {{ with $pages }} pp. {{ . }},{{ end }}
+  {{/* 연도 앞에 반드시 공백 하나 */}} {{ $year }}{{ with $doi }}, doi: {{ . }}{{ end }}.
 
   {{/* 버튼(attachments) 숨김
   {{ if $has_attachments }}
@@ -118,9 +117,9 @@
     {{ $item.Title }}
   </a>.
   {{ if $pub }}
-    {{- $pub | markdownify -}},
+    {{ $pub | markdownify }},
   {{ end }}
-  {{- $year -}}.
+  {{ $year }}.
 
   {{/* 버튼(attachments) 숨김
   {{ if $has_attachments }}
