@@ -19,7 +19,7 @@ publication_types: ["article-journal"]
 publication: "*IEEE Access*, vol. 13"
 publication_short: ""
 
-external_link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10921647"
+url_pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10921647"
 
 abstract: >-
   Speaker embeddings trained with Matryoshka Representation Learning (MRL) provide
