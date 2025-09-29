@@ -90,9 +90,7 @@
   <span class="article-metadata li-cite-author">
     {{ partial "page_metadata_authors" $item }},
   </span>
-  “<a href="{{ $href | safeURL }}" class="underline" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>
-    {{ $item.Title }}
-  </a>,”
+  “<a href="{{ $href | safeURL }}" class="underline" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>{{- $item.Title -}}</a>,”
   {{ if $pub }} <em>{{ $pub | markdownify }}</em>,{{ end }}
   {{ with $vol }} vol. {{ . }},{{ end }}
   {{ with $num }} no. {{ . }},{{ end }}
