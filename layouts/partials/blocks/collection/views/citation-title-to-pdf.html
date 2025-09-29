@@ -1,0 +1,25 @@
+{{/* Custom citation view: title links to url_pdf/external_link if set */}}
+{{- $p := .page -}}
+{{- $pdf := $p.Params.url_pdf -}}
+{{- $ext := $p.Params.external_link -}}
+{{- $href := cond (ne $pdf "") $pdf (cond (ne $ext "") $ext $p.RelPermalink) -}}
+
+<article class="view-citation">
+
+  <div class="article-metadata">
+    {{ partial "page_metadata_authors" (dict "page" $p) }}
+  </div>
+
+  <h3 class="article-title">
+    <a href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>
+      {{ $p.Title }}
+    </a>
+  </h3>
+
+  {{ with $p.Params.publication }}
+    <div class="pub-publication">
+      {{ . | markdownify }}
+    </div>
+  {{ end }}
+
+</article>
