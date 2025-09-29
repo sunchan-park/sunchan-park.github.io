@@ -52,7 +52,7 @@ sections:
   #   design:
   #     view: article-grid
   #     columns: 2
-  - block: custom_publications
+  - block: collection
     id: publications
     content:
       title: Publications
@@ -62,7 +62,7 @@ sections:
           - publications
         exclude_featured: false
     design:
-      view: citation-link
+      view: citation
   # - block: collection
   #   id: talks
   #   content:
