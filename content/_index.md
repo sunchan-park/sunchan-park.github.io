@@ -55,14 +55,14 @@ sections:
   - block: collection
     id: publications
     content:
-      title: Recent Publications
+      title: Publications
       text: ''
       filters:
         folders:
           - publications
         exclude_featured: false
     design:
-      view: citation-title-to-pdf
+      view: citation
   # - block: collection
   #   id: talks
   #   content:

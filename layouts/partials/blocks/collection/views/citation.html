@@ -6,7 +6,6 @@
 
   <article class="view-citation"><!-- DEBUG: custom citation override loaded -->
     <div class="article-metadata">
-      {{/* 간단 메타: 저자 · 연도 */}}
       {{- with .Params.authors -}}
         {{ delimit . ", " }}
         {{ with $.page.Date }} ({{ .Format "2006" }}){{ end }}
@@ -19,7 +18,6 @@
       </a>
     </h3>
 
-    {{/* 저널/학회 정보 */}}
     {{ with .Params.publication }}
       <div class="pub-publication">{{ . | markdownify }}</div>
     {{ end }}
