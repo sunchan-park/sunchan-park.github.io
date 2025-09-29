@@ -1,12 +1,11 @@
-{{/* 단일 논문 항목을 렌더링합니다. */}}
 {{ $item := . }}
 
 <div class="space-y-2 prose prose-slate max-w-none dark:prose-invert">
   <div>
     <div class="text-lg font-semibold">
-      {{/* external_link가 있는지 확인합니다. */}}
-      {{ if $item.Params.external_link }}
-        <a href="{{ $item.Params.external_link | absURL }}" target="_blank" rel="noopener">{{ $item.Title }}</a>
+      {{/* external_link 값이 있는지 확인하여 링크를 분기합니다. */}}
+      {{ with $item.Params.external_link }}
+        <a href="{{ . | absURL }}" target="_blank" rel="noopener">{{ $item.Title }}</a>
       {{ else }}
         <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
       {{ end }}
@@ -15,11 +14,10 @@
       {{ with $item.Params.authors }}{{ delimit . ", " }}{{ end }}
     </div>
     <div class="text-sm text-gray-500 dark:text-gray-400">
-      {{ if $item.Params.publication }}<em>{{ $item.Params.publication | markdownify }}</em>{{ end }}{{ if $item.Params.publication_short }} ({{ .Params.publication_short | markdownify }}){{ end }}.
+      {{ if $item.Params.publication }}<em>{{ $item.Params.publication | markdownify }}</em>{{ end }}{{ if $item.Params.publication_short }} ({{ $item.Params.publication_short | markdownify }}){{ end }}.
       {{ $item.Date.Format "2006" }}.
     </div>
   </div>
 
-  {{/* PDF, 코드 등 관련 링크를 렌더링합니다. */}}
   {{ partial "page_links" (dict "page" $item "is_list" 1) }}
 </div>
