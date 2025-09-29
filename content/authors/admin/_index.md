@@ -83,7 +83,7 @@ work:
     company_url: 'https://www.lg.com/us/'
     company_logo: ''
     date_start: 2018-01-21
-    date_end: 2019-12-31
+    date_end: 2019-06-19
     summary: |
 
 # Awards.
