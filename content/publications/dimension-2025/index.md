@@ -16,8 +16,10 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*IEEE Access*, vol. 13"
+publication: "IEEE Access"
 publication_short: ""
+volume: "13"
+pages: "45473-45487"
 
 external_link: "https://ieeexplore.ieee.org/document/10921647"
 
