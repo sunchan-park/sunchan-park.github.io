@@ -18,7 +18,7 @@ publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: "Oriental Chapter of the International Coordinating Committee on Speech Databases and Speech I/O Systems and Assessment"
-publication_short: "O-COCOSDA
+publication_short: "O-COCOSDA"
 
 external_link: "https://ieeexplore.ieee.org/abstract/document/8384470"
 

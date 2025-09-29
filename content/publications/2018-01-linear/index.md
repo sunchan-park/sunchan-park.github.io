@@ -19,7 +19,7 @@ publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: "International Conference on Electronics, Information, and Communication"
-publication_short: "ICEIC
+publication_short: "ICEIC"
 
 external_link: "https://ieeexplore.ieee.org/abstract/document/8330593"
 
