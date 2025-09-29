@@ -1,5 +1,33 @@
 {{ $item := .item }}
+{{/* 기존 버튼 표시 여부 판단은 유지하되, 아래에서 렌더링은 하지 않음 */}}
 {{ $has_attachments := partial "functions/has_attachments" $item }}
+
+{{/* ===== 링크 선택 로직 ===== */}}
+{{- $pdf := $item.Params.url_pdf | default "" -}}
+{{- $ext := $item.Params.external_link | default "" -}}
+
+{{- $s := newScratch -}}
+{{- $s.Set "extSite" "" -}}
+{{- with $item.Params.links -}}
+  {{- range . -}}
+    {{- /* 새 스키마: links: [{type, url, ...}] */ -}}
+    {{- if and (not ($s.Get "extSite")) (or (eq .type "site") (eq .type "paper") (eq .type "external")) -}}
+      {{- $s.Set "extSite" .url -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $extSite := $s.Get "extSite" -}}
+
+{{- $href := $item.RelPermalink -}}
+{{- if $pdf -}}
+  {{- $href = $pdf -}}
+{{- else if $ext -}}
+  {{- $href = $ext -}}
+{{- else if $extSite -}}
+  {{- $href = $extSite -}}
+{{- end -}}
+
+{{- $isExternal := ne $href $item.RelPermalink -}}
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
@@ -11,18 +39,23 @@
     {{ partial "page_metadata_authors" $item }}
   </span>
   ({{- $item.Date.Format "2006" -}}).
-  <a href="{{ $item.RelPermalink }}" class="underline">{{ $item.Title }}</a>.
+  <a href="{{ $href | safeURL }}" class="underline" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>
+    {{ $item.Title }}
+    {{- if $isExternal -}}<span aria-hidden="true">↗</span>{{- end -}}
+  </a>.
   {{ if $item.Params.publication_short }}
     {{- $item.Params.publication_short | markdownify -}}.
   {{ else if $item.Params.publication }}
     {{- $item.Params.publication | markdownify -}}.
   {{ end }}
 
+  {{/* 버튼(attachments) 숨김: 필요시 아래 블록의 주석을 풀어 사용하세요
   {{ if $has_attachments }}
   <div class="flex flex-wrap space-x-3">
     {{ partial "page_links" (dict "page" $item "is_list" 1) }}
   </div>
   {{ end }}
+  */}}
 
   {{/* MLA Style */}}
   {{ else }}
@@ -30,7 +63,10 @@
   <span class="article-metadata li-cite-author">
     {{ partial "page_metadata_authors" $item }}.
   </span>
-  <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  <a href="{{ $href | safeURL }}" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>
+    {{ $item.Title }}
+    {{- if $isExternal -}}<span aria-hidden="true">↗</span>{{- end -}}
+  </a>.
   {{ if $item.Params.publication_short }}
     {{- $item.Params.publication_short | markdownify -}},
   {{ else if $item.Params.publication }}
@@ -38,11 +74,13 @@
   {{ end }}
   {{- $item.Date.Format "2006" -}}.
 
+  {{/* 버튼(attachments) 숨김: 필요시 아래 블록의 주석을 풀어 사용하세요
   {{ if $has_attachments }}
   <div class="flex flex-wrap space-x-3">
     {{ partial "page_links" (dict "page" $item "is_list" 1) }}
   </div>
   {{ end }}
+  */}}
 
   {{ end }}
 </div>
