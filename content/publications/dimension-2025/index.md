@@ -1,4 +1,11 @@
 ---
+cascade:
+  _build:
+    render: never
+outputs:
+  home: HTML
+redirect: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10921647"
+
 title: "Dimension-Specific Margins and Element-Wise Gradient Scaling for Enhanced Matryoshka Speaker Embedding"
 
 authors:
@@ -18,8 +25,6 @@ publication_types: ["article-journal"]
 # Publication name and optional abbreviated publication name.
 publication: "*IEEE Access*, vol. 13"
 publication_short: ""
-
-url_pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10921647"
 
 abstract: >-
   Speaker embeddings trained with Matryoshka Representation Learning (MRL) provide
