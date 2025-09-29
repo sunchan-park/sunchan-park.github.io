@@ -1,4 +1,3 @@
-{{/* Final Override Attempt: Use simple HTML with inline styles to force list view */}}
 {{ $page := .page }}
 
 {{/* Determine the link destination */}}
@@ -6,24 +5,22 @@
 {{- $ext := $page.Params.external_link | default "" -}}
 {{- $href := cond (ne $pdf "") $pdf (cond (ne $ext "") $ext $page.RelPermalink) -}}
 
-<div class="publication-item" style="margin-bottom: 1.5rem; line-height: 1.6;">
-  {{/* Title with External Link */}}
-  <div class="publication-title" style="font-size: 1.15rem; font-weight: bold; margin-bottom: 0.2rem;">
-    <a href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>
-      {{ $page.Title }}
-    </a>
-  </div>
-
-  {{/* Authors and Year */}}
-  <div class="publication-authors" style="font-size: 0.9rem; color: #555;">
-    {{ with $page.Params.authors }}{{ delimit . ", " }}{{ end }}
-    {{ with $page.Date }} ({{ .Format "2006" }}){{ end }}
-  </div>
-
-  {{/* Publication Info */}}
-  <div class="publication-journal" style="font-size: 0.9rem; font-style: italic; color: #555;">
-    {{ with $page.Params.publication }}
-      {{ . | markdownify | plainify }}
-    {{ end }}
+<div class="pub-list-item" style="margin-bottom: 1rem;">
+  <div class="row">
+    <div class="col-auto" style="flex: 0 0 40px; text-align: center;">
+      <i class="far fa-file-alt pub-icon" aria-hidden="true" style="font-size: 1.5rem; margin-top: 0.25rem;"></i>
+    </div>
+    <div class="col">
+      <a class="pub-title" href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>{{ $page.Title }}</a>
+      <div class="pub-authors">{{ with $page.Params.authors }}{{ delimit . ", " }}{{ end }}</div>
+      <div class="pub-publication">
+        {{- with $page.Params.publication -}}
+          <em>{{ . | markdownify | plainify }}</em>
+        {{- end -}}
+        {{- with $page.Date -}}
+          , {{ .Format "2006" }}
+        {{- end -}}
+      </div>
+    </div>
   </div>
 </div>

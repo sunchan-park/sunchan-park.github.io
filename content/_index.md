@@ -52,7 +52,7 @@ sections:
   #   design:
   #     view: article-grid
   #     columns: 2
-  - block: collection
+  - block: custom_publications
     id: publications
     content:
       title: Publications
