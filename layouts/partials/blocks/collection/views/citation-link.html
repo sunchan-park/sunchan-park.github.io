@@ -1,25 +1,34 @@
 {{/* Override: make title link to url_pdf or external_link if provided */}}
-{{ with .page }}
-  {{- $pdf := .Params.url_pdf | default "" -}}
-  {{- $ext := .Params.external_link | default "" -}}
-  {{- $href := cond (ne $pdf "") $pdf (cond (ne $ext "") $ext .RelPermalink) -}}
+{{ $page := .page }}
+{{ $item := .item }}
 
-  <article class="view-citation"><!-- DEBUG: custom citation override loaded -->
-    <div class="article-metadata">
-      {{- with .Params.authors -}}
-        {{ delimit . ", " }}
-        {{ with $.page.Date }} ({{ .Format "2006" }}){{ end }}
-      {{- end -}}
+{{/* Determine the link destination */}}
+{{- $pdf := $page.Params.url_pdf | default "" -}}
+{{- $ext := $page.Params.external_link | default "" -}}
+{{- $href := cond (ne $pdf "") $pdf (cond (ne $ext "") $ext $page.RelPermalink) -}}
+
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem;">
+  <div class="row">
+    <div class="col-md-1">
+      <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
     </div>
+    <div class="col-md-11">
+      <a href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>{{ $page.Title }}</a>
 
-    <h3 class="article-title">
-      <a href="{{ $href }}" {{ if or $pdf $ext }}target="_blank" rel="noopener"{{ end }}>
-        {{ .Title }}
-      </a>
-    </h3>
+      <div class="pub-authors">
+        {{ with $page.Params.authors }}
+          {{ delimit . ", " }}
+        {{ end }}
+      </div>
 
-    {{ with .Params.publication }}
-      <div class="pub-publication">{{ . | markdownify }}</div>
-    {{ end }}
-  </article>
-{{ end }}
+      <div class="pub-publication">
+        {{ with $page.Params.publication }}
+          {{ . | markdownify }},
+        {{ end }}
+        {{ with $page.Date }}
+          {{ .Format "2006" }}.
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
