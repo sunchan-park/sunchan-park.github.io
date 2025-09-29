@@ -1,5 +1,5 @@
 ---
-title: "Reverberant environment embedding using dereverberation autoencoder"
+title: "Reverberant Environment Embedding using Dereverberation Autoencoder"
 
 authors:
 - Sunchan Park
