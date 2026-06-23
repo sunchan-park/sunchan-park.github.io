@@ -2,7 +2,7 @@
 title: "Dimension-Specific Margins and Element-Wise Gradient Scaling for Enhanced Matryoshka Speaker Embedding"
 
 authors:
-- Sunchan Park
+- admin
 - Hyung Soon Kim
 
 date: "2025-03-11T00:00:00Z"

@@ -47,7 +47,7 @@ profiles:
 
 interests:
   - Speech Processing
-  - Represetation Learning
+  - Representation Learning
   - Audio-Visual Understanding
   - Multimodal AI
 
@@ -56,19 +56,19 @@ education:
     institution: Pusan National University
     date_start: 2019-09-01
     date_end: 2025-08-31
-    summary: |
+    summary: ''
 
   - area: MS Electronics Engineering
     institution: Pusan National University
     date_start: 2016-03-01
     date_end: 2018-02-28
-    summary: |
+    summary: ''
 
   - area: BS Electronics Engineering
     institution: Pusan National University
     date_start: 2010-03-01
     date_end: 2016-02-29
-    summary: |
+    summary: ''
 
 work:
   - position: Postdoctoral Researcher
@@ -77,7 +77,7 @@ work:
     company_logo: ''
     date_start: 2025-09-01
     date_end: ''
-    summary: |
+    summary: ''
 
   - position: Research Associate
     company_name: LG Electronics
@@ -85,7 +85,7 @@ work:
     company_logo: ''
     date_start: 2018-01-21
     date_end: 2019-06-19
-    summary: |
+    summary: ''
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -97,21 +97,21 @@ work:
 #     date: '2022-12-01'
 #     awarder: NeurIPS
 #     icon: hero/trophy
-#     summary: |
+#     summary: ''
 #       Awarded for groundbreaking work on efficient training of large models.
 #   - title: AI Innovation Grant
 #     url: https://www.nsf.gov/
 #     date: '2021-06-15'
 #     awarder: National Science Foundation
 #     icon: hero/currency-dollar
-#     summary: |
+#     summary: ''
 #       $500,000 grant for research in ethical AI development.
 #   - title: Outstanding PhD Thesis
 #     url: https://www.stanford.edu/
 #     date: '2019-06-30'
 #     awarder: Stanford University
 #     icon: hero/academic-cap
-#     summary: |
+#     summary: ''
 #       Recognized for contributions to scaling laws in deep learning.
 ---
 
