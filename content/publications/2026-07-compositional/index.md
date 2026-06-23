@@ -6,12 +6,6 @@ authors:
 - admin
 - Kyeongbo Kong
 
-# Author notes (e.g. corresponding author / equal contribution), mapped by author order.
-author_notes:
-- "Equal contribution"
-- "Equal contribution"
-- "Corresponding author"
-
 date: "2026-07-11T00:00:00Z"
 
 # Schedule page publish date (NOT publication's date).
