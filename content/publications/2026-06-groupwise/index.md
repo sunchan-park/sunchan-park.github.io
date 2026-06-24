@@ -20,10 +20,10 @@ publication_types: ["article-journal"]
 publication: "IEEE Signal Processing Letters (Accepted)"
 publication_short: ""
 
-external_link: ""
-
 tags:
-- Source Themes
+- Speech Emotion Recognition
+- Self-Supervised Learning
+- Representation Learning
 featured: false
 
 projects: []

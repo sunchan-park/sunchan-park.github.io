@@ -21,10 +21,13 @@ publication_short: ""
 volume: "13"
 pages: "45473-45487"
 
-external_link: "https://ieeexplore.ieee.org/document/10921647"
+links:
+  - type: site
+    url: "https://ieeexplore.ieee.org/document/10921647"
 
 tags:
-- Source Themes
+- Speaker Recognition
+- Representation Learning
 featured: false
 
 projects: []

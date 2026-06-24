@@ -20,10 +20,13 @@ publication_types: ["paper-conference"]
 publication: "2nd Workshop on Compositional Learning: Safety, Interpretability, and Agents (ICML 2026)"
 publication_short: "ICML Workshop"
 
-external_link: "https://openreview.net/forum?id=KsY99GYUcq"
+links:
+  - type: site
+    url: "https://openreview.net/forum?id=KsY99GYUcq"
 
 tags:
-- Source Themes
+- Audio-Visual Learning
+- Multimodal AI
 featured: false
 
 projects: []

@@ -22,10 +22,14 @@ volume: "61"
 number: "1"
 pages: "e70134"
 
-external_link: "https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ell2.70134"
+links:
+  - type: site
+    url: "https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ell2.70134"
 
 tags:
-- Source Themes
+- Speech Processing
+- Dereverberation
+- Representation Learning
 featured: false
 
 projects: []
