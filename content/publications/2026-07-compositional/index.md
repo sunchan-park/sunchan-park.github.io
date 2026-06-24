@@ -18,7 +18,7 @@ publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
 publication: "2nd Workshop on Compositional Learning: Safety, Interpretability, and Agents (ICML 2026)"
-publication_short: "ICML 2026 Workshop"
+publication_short: "ICML Workshop"
 
 external_link: "https://openreview.net/forum?id=KsY99GYUcq"
 
