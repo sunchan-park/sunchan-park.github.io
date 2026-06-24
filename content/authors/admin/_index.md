@@ -46,10 +46,10 @@ profiles:
     url: https://orcid.org/0009-0004-2145-819X
 
 interests:
-  - Speech Processing
-  - Representation Learning
-  - Audio-Visual Understanding
   - Multimodal AI
+  - Audio-Visual Understanding
+  - Representation Learning
+  - Speech Processing
 
 education:
   - area: PhD Electronics Engineering
