@@ -34,9 +34,8 @@
 {{- $vol := $item.Params.volume -}}
 {{- $num := or $item.Params.number $item.Params.issue -}}
 {{- $pages := $item.Params.pages -}}
-{{/* DOI: prefer new `hugoblox.ids.doi` schema, fall back to legacy top-level `doi` */}}
-{{- $doi := $item.Params.doi -}}
-{{- with $item.Params.hugoblox -}}{{- with .ids -}}{{- with .doi -}}{{- $doi = . -}}{{- end -}}{{- end -}}{{- end -}}
+{{/* DOI is recorded in front matter (`hugoblox.ids.doi`) but not printed here —
+     the title already links to the article via its DOI. */}}
 {{- $year := $item.Date.Format "2006" -}}
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
@@ -97,7 +96,7 @@
   {{ with $vol }} vol. {{ . }},{{ end }}
   {{ with $num }} no. {{ . }},{{ end }}
   {{ with $pages }} pp. {{ . }},{{ end }}
-  {{/* 연도 앞에 반드시 공백 하나 */}} {{ $year }}{{ with $doi }}, doi: {{ . }}{{ end }}.
+  {{/* 연도 앞에 반드시 공백 하나 */}} {{ $year }}.
 
   {{/* 버튼(attachments) 숨김
   {{ if $has_attachments }}
