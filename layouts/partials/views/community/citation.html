@@ -34,7 +34,9 @@
 {{- $vol := $item.Params.volume -}}
 {{- $num := or $item.Params.number $item.Params.issue -}}
 {{- $pages := $item.Params.pages -}}
+{{/* DOI: prefer new `hugoblox.ids.doi` schema, fall back to legacy top-level `doi` */}}
 {{- $doi := $item.Params.doi -}}
+{{- with $item.Params.hugoblox -}}{{- with .ids -}}{{- with .doi -}}{{- $doi = . -}}{{- end -}}{{- end -}}{{- end -}}
 {{- $year := $item.Date.Format "2006" -}}
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">

@@ -17,8 +17,17 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "IEEE Signal Processing Letters (Accepted)"
+publication: "IEEE Signal Processing Letters"
 publication_short: ""
+volume: "33"
+pages: "2705-2709"
+hugoblox:
+  ids:
+    doi: "10.1109/LSP.2026.3707494"
+
+links:
+  - type: site
+    url: "https://doi.org/10.1109/LSP.2026.3707494"
 
 tags:
 - Speech Emotion Recognition
