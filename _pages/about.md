@@ -79,6 +79,12 @@ My research interests span **Multimodal AI**, **Audio-Visual Perception**, **Spa
 {% bibliography --group_by none %}
 </div>
 
+## Under Review
+
+<div class="publications">
+{% bibliography --file under_review --group_by none %}
+</div>
+
 ## Education
 
 - **Ph.D. in Electronics Engineering**, Pusan National University · 2019–2025
