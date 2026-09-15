@@ -1,0 +1,27 @@
+{% comment %}
+  Local override of al_img_tools' script include.
+  Uses the stock medium-zoom, but initializes it on every zoomable image
+  EXCEPT the Under Review placeholder thumbnails (which are empty cards and
+  should not open a zoom). Behavior is otherwise identical to the default.
+{% endcomment %}
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"
+  integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc="
+  crossorigin="anonymous"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof mediumZoom !== "function") return;
+    var els = Array.prototype.slice
+      .call(document.querySelectorAll("[data-zoomable]"))
+      .filter(function (im) {
+        return (im.getAttribute("src") || "").indexOf("under_review") === -1;
+      });
+    if (!els.length) return;
+    mediumZoom(els, {
+      background:
+        (getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color") || "#ffffff").trim() + "ee",
+    });
+  });
+</script>
