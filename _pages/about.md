@@ -66,7 +66,7 @@ latest_posts:
 
 <img class="hero-photo" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Sunchan Park">
 
-I am a Postdoctoral Researcher in the Computer Vision & Signal Processing Lab ([CVSP](https://www.pnu-cvsp.com)) at [Pusan National University](https://www.pusan.ac.kr/eng), working with Prof. Kyeongbo Kong.<br>I have worked extensively on speech processing — including speech recognition, speaker recognition, and speech emotion recognition. Building on this foundation, I am expanding my research into **multimodal AI**, bridging audio, vision, and language, with a recent focus on **spatio-temporal audio-visual understanding**.
+I am a Postdoctoral Researcher in the [Computer Vision & Signal Processing Lab](https://www.pnu-cvsp.com) at [Pusan National University](https://www.pusan.ac.kr/eng), working with Prof. Kyeongbo Kong. My background is in speech processing — speech, speaker, and emotion recognition. Building on this, I am expanding into **multimodal AI**, bridging audio, vision, and language, with a recent focus on **spatio-temporal audio-visual understanding**.
 
 My research interests span **Multimodal AI**, **Audio-Visual Perception**, **Spatio-Temporal Reasoning**, and **Agentic Systems**.
 

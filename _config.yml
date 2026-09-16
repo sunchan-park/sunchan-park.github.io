@@ -8,8 +8,7 @@ middle_name:
 last_name: Park
 contact_note: >
   Feel free to reach out by email for collaborations or questions.
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Sunchan Park — Postdoctoral Researcher in the CVSP Lab at Pusan National University, working on multimodal AI, audio-visual perception, and spatio-temporal reasoning.
+description: Postdoctoral Researcher at Pusan National University, working on multimodal AI.
 footer_text: ''
 keywords: Sunchan Park, multimodal AI, audio-visual perception, spatio-temporal reasoning, agentic systems, speech processing, Pusan National University, CVSP
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
