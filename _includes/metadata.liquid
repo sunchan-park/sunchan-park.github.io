@@ -1,9 +1,17 @@
 {% comment %}
   Local override of al_folio_core/_includes/metadata.liquid.
-  ONLY CHANGE vs the gem copy: twitter:card is "summary_large_image"
-  instead of "summary", so the 1200x630 preview card renders as a full
-  banner on X rather than being cropped to a square thumbnail.
-  On theme upgrades, re-copy the gem file and re-apply that one line.
+
+  Divergences from the gem copy (re-apply these after a theme upgrade):
+   1. twitter:card is "summary_large_image", not "summary", so the 1200x630
+      preview card renders as a full banner on X instead of being cropped
+      to a square thumbnail.
+   2. og:image:width / og:image:height / og:image:alt are emitted from
+      site.og_image_width / _height / _alt, letting platforms lay the card
+      out before the image finishes downloading.
+   3. og:locale comes from site.og_locale (default en_US) rather than
+      site.lang. Open Graph wants language_TERRITORY, while site.lang must
+      stay a BCP 47 tag for <html lang>, so the two cannot share a value.
+   4. twitter:image:alt mirrors og:image:alt.
 {% endcomment %}
 {% if site.enable_google_verification or site.enable_bing_verification %}
   <!-- Website verification -->
@@ -73,8 +81,15 @@
       {% assign og_image_url = og_image_source | prepend: site.baseurl | prepend: site.url %}
     {% endif %}
     <meta property="og:image" content="{{ og_image_url }}">
+    {% if site.og_image_width and site.og_image_height %}
+      <meta property="og:image:width" content="{{ site.og_image_width }}">
+      <meta property="og:image:height" content="{{ site.og_image_height }}">
+    {% endif %}
+    {% if site.og_image_alt %}
+      <meta property="og:image:alt" content="{{ site.og_image_alt }}">
+    {% endif %}
   {% endif %}
-  <meta property="og:locale" content="{{ site.lang }}">
+  <meta property="og:locale" content="{{ site.og_locale | default: 'en_US' }}">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -82,6 +97,9 @@
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{{ og_image_url }}">
+    {% if site.og_image_alt %}
+      <meta name="twitter:image:alt" content="{{ site.og_image_alt }}">
+    {% endif %}
   {% endif %}
   {% if site.x_username %}
     <meta name="twitter:site" content="@{{ site.x_username }}">

@@ -109,6 +109,10 @@ max_width: 700px
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: /assets/img/og_card.png # site-wide Open Graph / social preview card
+og_image_width: 1200 # pixel size of og_image, so platforms can lay the card out before fetching it
+og_image_height: 630
+og_image_alt: Sunchan Park — Postdoctoral Researcher at Pusan National University
+og_locale: en_US # Open Graph wants language_TERRITORY; `lang` above stays BCP 47 for <html lang>
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
