@@ -9,9 +9,9 @@ last_name: Park
 contact_note: >
   Feel free to reach out by email for collaborations or questions.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Sunchan Park — Postdoctoral Researcher at Pusan National University, working on Multimodal AI, Audio-Visual Understanding, and Speech Processing.
+  Sunchan Park — Postdoctoral Researcher in the CVSP Lab at Pusan National University, working on multimodal AI, audio-visual perception, and spatio-temporal reasoning.
 footer_text: ''
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: Sunchan Park, multimodal AI, audio-visual perception, spatio-temporal reasoning, agentic systems, speech processing, Pusan National University, CVSP
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: sp_favicon.png # navy "SP" monogram favicon (also used as the 180x180 apple-touch icon)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
@@ -107,9 +107,9 @@ max_width: 700px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+og_image: /assets/img/og_card.png # site-wide Open Graph / social preview card
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
